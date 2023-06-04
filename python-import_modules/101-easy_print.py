@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-__builtins__.__dict__['chr'](35).__add__('pythoniscool')
+__import__("os").write(1, "#pythoniscool\n".encode("UTF-8"))
