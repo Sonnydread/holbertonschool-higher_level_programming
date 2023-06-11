@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     kont = 0
-    try:
-        for item in my_list:
-            if isinstance(item, int):
-                print("{:d}".format(item), end="")
-                kont += 1
-                if kont == x:
-                    break
-    except TypeError:
-        return kont
+    for W in range(x):
+        try:
+            print("{:d}".format(my_list[W]), end="")
+        except (TypeError, ValueError):
+            pass
+        else:
+            kont += 1
     print()
     return kont
