@@ -77,3 +77,29 @@ hola
 hola
 >>> text_indentation('''hola''')
 hola
+
+>>> text_indentation("Hi worl")
+Hi worl
+
+>>> text_indentation("Hi", "worl")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation("hola?    mi nombre?   es")
+hola?
+<BLANKLINE>
+mi nombre?
+<BLANKLINE>
+es
+
+>>> text_indentation({"hi": 9})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("Hi? worl.")
+Hi?
+<BLANKLINE>
+worl.
+<BLANKLINE>
