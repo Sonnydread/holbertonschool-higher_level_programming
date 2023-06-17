@@ -52,3 +52,50 @@ TypeError: matrix_divided() missing 1 required positional argument: 'div'
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test da function::
+====================
+>>> matrix_divided(["str", [1, 2, 3]], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test da function::
+====================
+>>> matrix_divided([[1, 2, 4], [3, 9]], 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+# Test da function::
+====================
+>>> matrix_divided([[1, 2, 4], [3, 9, 20]], 'a')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Test da function::
+====================
+>>> matrix_divided([[1, 2], [4, 8]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+# Test da function::
+====================
+>>> matrix_divided([[200, 500], [200, 700]], float("NaN"))
+[[nan, nan], [nan, nan]]
+
+# Test da function::
+====================
+>>> matrix_divided("matrix", 5)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test da function::
+====================
+>>> matrix_divided(3,8)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
