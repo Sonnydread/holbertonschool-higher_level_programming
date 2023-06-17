@@ -31,3 +31,29 @@ TypeError: a must be an integer
 ====================
 >>> add_integer(-5, -9)
 -14
+
+# Test da function::
+====================
+>>> add_integer(-3, -8)
+-11
+
+# Test da function::
+====================
+>>> add_integer(float("NaN"), 7)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+# Test da function::
+====================
+>>> add_integer(float("-inf"), 2)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+# Test da function::
+====================
+>>> add_integer("8", 3)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
