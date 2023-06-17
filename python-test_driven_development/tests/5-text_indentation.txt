@@ -1,20 +1,49 @@
-#!/usr/bin/python3
-"""a function that prints a text with 2 new lines"""
 
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-def text_indentation(text):
+>>> text_indentation("sonny?hola")
+sonny?
+<BLANKLINE>
+hola>>>
 
-    if type(text) != str:
-        raise TypeError("text must be a string")
-    B = 0
-    for Z in text:
-        if B == 1 and Z == ' ':
-            x = ""
-        elif B == 1 and Z !=
-            B = 0
-	    pass
-        if Z in ['.', '?', ':']:
-            B = 1
-            print(f"{Z}\n\n", end='')
-        else
-            print(Z, end='')
+>>> text_indentation()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation((5, 8, 3))
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+File "/root/holbertonschool-higher_level_programming/python-test_driven_development/5-text_indentation.py", line 8, in text_indentation
+raise TypeError("text must be a string")
+      TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+File "/root/holbertonschool-higher_level_programming/python-test_driven_development/5-text_indentation.py", line 8, in text_indentation
+raise TypeError("text must be a string")
+          TypeError: text must be a string
+
+>>>  text_indentation(37)
+File "<stdin>", line 1
+text_indentation(37)
+IndentationError: unexpected indent
+
+>>> text_indentation(heythere)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'heythere' is not defined
+
+>>> text_indentation('''hola''')
+hola>>>
+
+>>> text_indentation(" ")
+>>>
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+>>> text_indentation("\n\n")
+<BLANKLINE>
+<BLANKLINE>
