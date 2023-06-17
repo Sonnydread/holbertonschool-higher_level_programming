@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""a function that prints a text with 2 new lines"""
+
+
+def text_indentation(text):
+
+    if type(text) != str:
+        raise TypeError("text must be a string")
+    B = 0
+    for Z in text:
+        if B == 1 and Z == ' ':
+            x = ""
+        elif B == 1 and Z !=
+            B = 0
+	    pass
+        if Z in ['.', '?', ':']:
+            B = 1
+            print(f"{Z}\n\n", end='')
+        else
+            print(Z, end='')
