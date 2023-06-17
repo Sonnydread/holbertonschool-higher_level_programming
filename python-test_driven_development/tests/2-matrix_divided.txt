@@ -1,0 +1,54 @@
+# matrix_divide sample tests ::
+==============================
+
+# Import function::
+===================
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Test da function::
+====================
+>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 2)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+# Test da function::
+====================
+>>> matrix_divided([[2.3, 5], [2, 7]], 2.4)
+[[0.96, 2.08], [0.83, 2.92]]
+
+# Test da function::
+====================
+>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 3.5)
+[[0.57, 1.14, 1.71], [2.29, 2.86, 3.43]]
+
+# Test da function::
+====================
+>>> matrix_divided([[2.3, 5], [2, 7]], float("inf"))
+[[0.0, 0.0], [0.0, 0.0]]
+
+# Test da function::
+====================
+>>> matrix_divided([[3, 1], [7, 2]], "gfguire")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Test da function::
+====================
+>>> matrix_divided()
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+# Test da function::
+====================
+>>> matrix_divided(None)
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# Test da function::
+====================
+>>> matrix_divided(["matrix", 3], 5)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
