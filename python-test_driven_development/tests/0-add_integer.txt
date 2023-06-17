@@ -85,3 +85,20 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 ...
 TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+# Test da function::
+====================
+>>> add_integer(2)
+100
+
+# Test da function::
+====================
+>>> add_integer(2.1, 6.3)
+8
+
+# Test da function::
+====================
+>>> add_integer((2, 4))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
