@@ -35,7 +35,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_big_list(self):
         self.assertEqual(max_integer([
-            922, 902, 903, 904, 944, 906, 907, 9081]), 1000)
+            922, 902, 903, 904, 944, 906, 907, 1000]), 1000)
 
     def test_list_with_loop(self):
         my_list = [1, 2, 3, 4, 5]
