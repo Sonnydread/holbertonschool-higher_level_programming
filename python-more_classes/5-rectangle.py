@@ -33,7 +33,7 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return self.__width * self.__height)
+        return self.__width * self.__height
 
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
@@ -56,5 +56,5 @@ class Rectangle:
         string = string + ", " + str(self.__height) + ")"
         return (string)
 
-     def __del__(self):
+    def __del__(self):
         print("Bye rectangle...")
