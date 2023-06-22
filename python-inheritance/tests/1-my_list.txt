@@ -55,5 +55,5 @@ Testing 8 ::
 
 Testing 9 ::
 ============
->>> ml.print_sorted([float("NaN")])
+>>> XD.print_sorted([float("NaN")])
 [nan]
