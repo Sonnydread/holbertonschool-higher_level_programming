@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""BaseGeometry class"""
+"""empty class BaseGeometry"""
 
 
 class BaseGeometry:
