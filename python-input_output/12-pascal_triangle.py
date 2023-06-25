@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-"""returns list of integers to be Pascal Triangle"""
+"""funct that returns a list of integers repre the Pascal triangle"""
 
 
 def pascal_triangle(n):
 
-    triangle = []
-    for X in range(n):
-        row = []
-        for Z in range(X + 1):
-            if Z == 0 or Z == X:
-                row.append(1)
-            else:
-                row.append(triangle[X - 1][Z - 1] + triangle[X - 1][Z])
-        triangle.append(row)
-    return triangle
+    if n <= 0:
+        return []
+
+    pas = [[1]]
+    for Y in range(n - 1):
+        DUB = [1]
+        for x in range(len(pas) - 1):
+            DUB.append(pas[Y][x] + pas[Y][x + 1])
+        DUB.append(1)
+        pas.append(DUB)
+    return pas
