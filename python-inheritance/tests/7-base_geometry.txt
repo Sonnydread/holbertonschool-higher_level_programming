@@ -3,14 +3,16 @@ Testing 7-base_geometry.py ::
 
 Import function::
 ===================
->>> XD = __import__('7-base_geometry').BaseGeometry
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Testing 1 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name", 5)
 
 Testing 2 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("age", (4,))
 Traceback (most recent call last):
     ...
@@ -18,6 +20,7 @@ TypeError: age must be an integer
 
 Testing 3 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("age", None)
 Traceback (most recent call last):
     ...
@@ -25,6 +28,7 @@ TypeError: age must be an integer
 
 Testing 4 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.area()
 Traceback (most recent call last):
     ...
@@ -32,6 +36,7 @@ Exception: area() is not implemented
 
 Testing 5 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name", -5)
 Traceback (most recent call last):
     ...
@@ -39,6 +44,7 @@ ValueError: name must be greater than 0
 
 Testing 6 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("age", {3, 4})
 Traceback (most recent call last):
     ...
@@ -46,6 +52,7 @@ TypeError: age must be an integer
 
 Testing 7 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name", 0)
 Traceback (most recent call last):
     ...
@@ -53,6 +60,7 @@ ValueError: name must be greater than 0
 
 Testing 8 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name")
 Traceback (most recent call last):
     ...
@@ -60,6 +68,7 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Testing 9 ::
 ============
+>>> XD = BaseGeometry()
 >>> XD.area(5)
 Traceback (most recent call last):
     ...
@@ -67,6 +76,7 @@ TypeError: area() takes 1 positional argument but 2 were given
 
 Testing 10 ::
 =============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator()
 Traceback (most recent call last):
     ...
@@ -74,6 +84,7 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 
 Testing 11 ::
 =============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name", "5")
 Traceback (most recent call last):
     ...
@@ -81,6 +92,7 @@ TypeError: name must be an integer
 
 Testing 12 ::
 =============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("age", [3])
 Traceback (most recent call last):
     ...
@@ -88,6 +100,7 @@ TypeError: age must be an integer
 
 Testing 13 ::
 =============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name", 1, 2)
 Traceback (most recent call last):
     ...
@@ -95,6 +108,7 @@ TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
 Testing 14 ::
 =============
+>>> XD = BaseGeometry()
 >>> XD.area(5, 5)
 Traceback (most recent call last):
     ...
@@ -102,6 +116,7 @@ TypeError: area() takes 1 positional argument but 3 were given
 
 Testing 15 ::
 =============
+>>> XD = BaseGeometry()
 >>> XD.integer_validator("name", True)
 Traceback (most recent call last):
     ...
