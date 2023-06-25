@@ -3,15 +3,15 @@
 
 
 def pascal_triangle(n):
-
+    """representing the Pascal's triangle of n"""
     if n <= 0:
         return []
 
     pas = [[1]]
-    for Y in range(n - 1):
+    for i in range(n - 1):
         DUB = [1]
         for x in range(len(pas) - 1):
-            DUB.append(pas[Y][x] + pas[Y][x + 1])
+            DUB.append(pas[i][x] + pas[i][x + 1])
         DUB.append(1)
         pas.append(DUB)
     return pas
