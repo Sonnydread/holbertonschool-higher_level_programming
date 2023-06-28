@@ -3,6 +3,7 @@
 
 
 class Base:
+    """Base of all other classes in this project"""
 
     __nb_objects = 0
 
