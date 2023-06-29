@@ -77,14 +77,10 @@ class Rectangle(Base):
 
     def display(self):
         """public method for print stdout charact # """
-        for yt in range(self.__y):
+        for W in range(self.__height):
+            for R in range(self.__width):
+                print('#', end='')
             print()
-        for ht in range(self.__height):
-            for xt in range(self.__x):
-                print(" ", end="")
-        for wt in range(self.__width):
-            print("#", end="")
-        print()
 
     def __str__(self):
         """elements to work with"""
