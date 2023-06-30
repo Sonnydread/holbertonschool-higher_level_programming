@@ -32,3 +32,31 @@ class Base:
                 new.append(ele.to_dictionary())
         with open("{}.json".format(cls.__name__), 'w') as fle:
             fle.write(cls.to_json_string(new))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or not json_string:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            clase = cls(1, 1)
+        elif cls.__name__ == "Square":
+            clase = cls(1)
+
+        clase.update(**dictionary)
+        return clase
+
+    @classmethod
+    def load_from_file(cls):
+        from os import path
+        fl = "{}.json".format(cls.__name__)
+        if not path.isfile(fl):
+            return []
+        with open(fl, 'r', encoding="utf-8") as fle:
+            ls = cls.from_json_string(fle.read())
+            for index in range(len(ls)):
+                ls[index] = cls.create(**ls[index])
+            return ls
