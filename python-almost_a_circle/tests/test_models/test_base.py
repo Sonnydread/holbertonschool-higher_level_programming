@@ -1,9 +1,29 @@
+#!/usr/bin/python3
+"""Unittest base class"""
 import unittest
-
+import pycodestyle
 from models.base import Base
 
-class TestBase(unittest.TestCase):
 
-    def test_to_json_string(self):
-        self.assertEqual(Base.to_json_string([{}]), "[{}]")
-        self.assertEqual(Base.to_json_string([]), "[]")
+class Test_Base(unittest.TestCase):
+    """Test for bases"""
+    def test_class_Base(self):
+        b1 = Base()
+        self.assertAlmostEqual(b1.id, 1)
+        b2 = Base()
+        self.assertAlmostEqual(b2.id, 2)
+        b3 = Base()
+        self.assertAlmostEqual(b3.id, 3)
+        b4 = Base(23)
+        self.assertAlmostEqual(b4.id, 23)
+        b5 = Base(2)
+        self.assertAlmostEqual(b5.id, 2)
+        b6 = Base()
+        self.assertAlmostEqual(b6.id, 4)
+
+    def test_pycodestyle_conformance(self):
+        """Test"""
+        style = pycodestyle.StyleGuide(quiet=True)
+        result = style.check_files(['models/base.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
