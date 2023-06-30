@@ -18,14 +18,17 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """We add the size"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """We add the size.setter"""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """We add update attributes"""
         if len(args) != 0:
             if len(args) >= 1:
                 self.id = args[0]
