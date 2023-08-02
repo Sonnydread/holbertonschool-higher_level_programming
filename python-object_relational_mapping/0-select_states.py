@@ -7,20 +7,20 @@ import MySQLdb
 
 if __name__ == "__main__":
     host = "localhost"
-    username = sys.argv[1]
-    passw = sys.argv[2]
-    datbasnam = sys.argv[3]
+    user = sys.argv[1]
+    password = sys.argv[2]
+    data_base = sys.argv[3]
 
-    konex = MySQLdb.connect(host=host, username=username, passw=passw,
-                                datbasnam=datbasnam, port=3306)
-    kurs = conection.kurs()
+    conection = MySQLdb.connect(host=host, user=user, passwd=password,
+                                db=data_base, port=3306)
+    cursor = conection.cursor()
 
-    irie = "SELECT * FROM states ORDER BY id"
-    kurs.execute(irie)
+    querie = "SELECT * FROM states ORDER BY id"
+    cursor.execute(querie)
 
-    result = kurs.fetchall()
+    result = cursor.fetchall()
     for row in result:
         print(row)
 
-    kurs.close()
+    cursor.close()
     conection.close()
