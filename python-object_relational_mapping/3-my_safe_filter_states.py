@@ -2,7 +2,7 @@
 """ takes in arguments and displays all values in the states of hbtn_0e_0_usa"""
 
 import MySQLdb
-from sys import argv
+import sys
 
 if __name__ == "__main__":
     db = MySQLdb.connect("localhost", user=sys.argv[1], passwd=sys.argv[2],
