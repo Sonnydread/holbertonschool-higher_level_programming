@@ -7,13 +7,13 @@ import sys
 if __name__ == "__main__":
     db = MySQLdb.connect("localhost", user=sys.argv[1], port=3306,
                          passwd=sys.argv[2], db=sys.argv[3])
-    kur = db.cursor()
+    cur = db.cursor()
     kur.execute("""SELECT id, name
                 FROM states
                 WHERE BINARY name = %s
                 ORDER BY id""", (sys.argv[4],))
-    rows = kur.fetchall()
+    rows = cur.fetchall()
     for row in rows:
         print(row)
-    kur.close()
+    cur.close()
     db.close()
