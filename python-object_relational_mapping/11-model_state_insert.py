@@ -12,11 +12,13 @@ if __name__ == "__main__":
                            .format(argv[1], argv[2], argv[3]),
                            pool_pre_ping=True)
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    Sesion = sessionmaker(bind=engine)
+    sesion = Sesion()
 
     nw_xx = State(name='Lousiana')
-    session.add(nw_xx)
-    session.commit()
-    print(nw_xx.id)
-    session.close()
+    sesion.add(nw_xx)
+    sesion.commit()
+    st = sesion.query(State).filter_by(name="Louisiana").first()
+    print(st.id)
+
+    sesion.close()
