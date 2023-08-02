@@ -13,11 +13,11 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    request = session.request(State).first()
+    query = session.query(State).first()
 
-    if request is None:
+    if query is None:
         print("Nothing")
     else:
-        print(f"{request.id}: {request.name}")
+        print(f"{query.id}: {query.name}")
 
     session.close()
