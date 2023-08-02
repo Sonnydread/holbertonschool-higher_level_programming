@@ -8,7 +8,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect("localhost", user=sys.argv[1], port=3306,
                          passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
-    kur.execute("""SELECT id, name
+    cur.execute("""SELECT id, name
                 FROM states
                 WHERE BINARY name = %s
                 ORDER BY id""", (sys.argv[4],))
