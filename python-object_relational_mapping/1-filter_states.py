@@ -6,14 +6,14 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    konex = MySQLdb.connect(host="localhost", user=argv[1],
-                                 passwd=argv[2], db=argv[3], port=3306)
-    kurs = konex.kurs()
+    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+                         passwd=argv[2], db=argv[3])
+    cursor = db.cursor()
     request = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
-    rows_number = kurs.execute(request)
+    rows_number = cursor.execute(request)
 
     for row in range(rows_number):
-        print(kurs.fetchone())
+        print(cursor.fetchone())
 
-    kurs.close()
-    konex.close()
+    cursor.close()
+    db.close()
