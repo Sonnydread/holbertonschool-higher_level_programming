@@ -9,7 +9,7 @@ if __name__ == "__main__":
     stnam = (argv[4],)
 
     conextion = MySQLdb.connect(host=lh, port=3306, user=argv[1],
-                                 passwd=argv[2], db=argv[3])
+                                passwd=argv[2], db=argv[3])
     cursor = conextion.cursor()
 
     request = "SELECT c.name FROM cities AS c \
