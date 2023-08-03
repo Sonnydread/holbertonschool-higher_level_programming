@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" takes in arguments and displays all values in the states of hbtn_0e_0_usa"""
+"""take arguments and displays all values in the states of hbtn_0e_0_usa"""
 
 import MySQLdb
 import sys
